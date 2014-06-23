@@ -2758,6 +2758,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D094E46417775B1000906BF7 /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -2772,6 +2773,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D094E46417775B1000906BF7 /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -2807,6 +2809,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D094E46417775B1000906BF7 /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -3013,6 +3016,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D094E46417775B1000906BF7 /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
