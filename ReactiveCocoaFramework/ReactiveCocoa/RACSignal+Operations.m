@@ -240,6 +240,28 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 	}] setNameWithFormat:@"[%@] -repeat", self.name];
 }
 
+- (RACSignal *)repeatUntilEmpty {
+	return [[RACSignal createSignal:^(id<RACSubscriber> subscriber) {
+		__block BOOL empty = YES;
+		
+		return subscribeForever(self,
+			^(id x) {
+				empty = NO;
+				[subscriber sendNext:x];
+			},
+			^(NSError *error, RACDisposable *disposable) {
+				[disposable dispose];
+				[subscriber sendError:error];
+			},
+			^(RACDisposable *disposable) {
+				if (empty)
+					[disposable dispose];
+				else
+					empty = YES; // Resubscribe.
+			});
+	}] setNameWithFormat:@"[%@] -repeatUntilEmpty", self.name];
+}
+
 - (RACSignal *)catch:(RACSignal * (^)(NSError *error))catchBlock {
 	NSCParameterAssert(catchBlock != NULL);
 

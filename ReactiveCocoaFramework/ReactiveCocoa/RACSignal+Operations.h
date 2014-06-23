@@ -94,6 +94,9 @@ extern const NSInteger RACSignalErrorNoMatchingCase;
 /// Resubscribes when the signal completes.
 - (RACSignal *)repeat;
 
+/// Resubscribes when the signal completes, unless there were no values sent, in which case it completes.
+- (RACSignal *)repeatUntilEmpty;
+
 /// Executes the given block each time a subscription is created.
 ///
 /// block - A block which defines the subscription side effects. Cannot be `nil`.
